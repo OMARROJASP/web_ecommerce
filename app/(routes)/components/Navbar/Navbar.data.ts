@@ -1,7 +1,7 @@
 export const links =[
     {
         name: "Productos",
-        href: "/"
+        href: "/product"
     },
     {
         name: "Categoria",
