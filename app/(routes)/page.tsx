@@ -1,10 +1,10 @@
-import { Banner, Navbar } from "./components";
+import { Navbar,Banner } from "@/components/Shared";
+//import { Navbar } from "./components";
 
 export default function Home() {
   return (
     <div>
       <div>
-        <Navbar />
         <Banner />
         
       </div>
