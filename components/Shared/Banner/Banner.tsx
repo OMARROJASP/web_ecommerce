@@ -2,6 +2,6 @@ import React from 'react'
 
 export function Banner() {
   return (
-    <section>Banner</section>
+    <section className='bg-blue-100'>BannerCd</section>
   )
 }
