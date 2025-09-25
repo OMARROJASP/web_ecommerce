@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export function FooterDesktop() {
   return (
-    <footer className="bg-gray-900 text-gray-200 p-8">
+    <footer className="hidden md:flex bg-gray-900 text-gray-200 p-8">
       <div className="flex gap-16 items-start max-w-7xl mx-auto">
         {/* Logo */}
         <div className="flex items-center justify-center">
