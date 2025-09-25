@@ -1,6 +1,7 @@
 "use client"
 import { useGetBannersQuery } from '@/lib/features/banners/bannersApi'
 import React from 'react'
+import { Carrucel } from './Carrucel';
 
 export function Banner() {
   const { data: response, isLoading, isError} = useGetBannersQuery();
@@ -14,11 +15,7 @@ export function Banner() {
   }
   return (
     <section className='bg-blue-100'>
-      {
-        response?.data.map((banner) => (
-          <p key={banner.bnn_id}>{banner.bnn_title}</p>
-        ))
-      }
+    <Carrucel banners={response?.data ? response?.data : []}/>
     </section>
   )
 }
