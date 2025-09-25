@@ -1,31 +1,30 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react"
 
-interface Banner {
-    bnn_id: number,
-    bnn_title: string,
-    bnn_description: string,
-    bnn_image_url_desktop:string,
-    bnn_is_active:boolean,
-    bnn_position:number
+export interface Banner {
+  bnn_id: number,
+  bnn_title: string,
+  bnn_description: string,
+  bnn_image_url_desktop: string,
+  bnn_image_url_mobile: string,
+  bnn_is_active: boolean,
+  bnn_position: number
 }
 
-interface responseProduct {
-    message: string,
-    data: Banner[]
+interface ResponseProduct {
+  message: string,
+  data: Banner[]
 }
 
 export const bannersApi = createApi({
-    reducerPath: 'bannersApi',
-    // Usa la variable de entorno para la base URL del backend
-    baseQuery: fetchBaseQuery({
-        baseUrl:"http://localhost:3001"
+  reducerPath: "bannersApi",
+  baseQuery: fetchBaseQuery({
+    baseUrl: process.env.NEXT_PUBLIC_BACKEND_URL, // ✅ lee la variable de entorno
+  }),
+  endpoints: (builder) => ({
+    getBanners: builder.query<ResponseProduct, void>({
+      query: () => "banner",
     }),
-    endpoints: (builder) => ({
-        getBanners: builder.query<responseProduct, void>({
-            // La ruta aquí es relativa a la baseUrl
-            query: () => 'banner'
-        })
-    })
-});
+  }),
+})
 
-export const { useGetBannersQuery } = bannersApi;
+export const { useGetBannersQuery } = bannersApi
