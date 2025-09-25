@@ -2,6 +2,7 @@ import { Facebook, Instagram, Twitter, Mail, Phone, MapPin } from "lucide-react"
 
 export const dataFooter = [
   {
+    position: 0,
     section: "DIRECCIÓN",
     items: [
       { icon: Mail, text: "rukanasstore@rukanas.com", link: "mailto:rukanasstore@rukanas.com" },
@@ -10,6 +11,7 @@ export const dataFooter = [
     ],
   },
   {
+    position: 1,
     section: "NOSOTROS",
     items: [
       { text: "Quiénes somos", link: "/about" },
@@ -18,6 +20,7 @@ export const dataFooter = [
     ],
   },
   {
+    position: 2,
     section: "SÍGUENOS",
     items: [
       { icon: Facebook, text: "Facebook", link: "https://facebook.com/rukanasstore" },
