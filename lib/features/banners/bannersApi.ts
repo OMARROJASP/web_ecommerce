@@ -10,7 +10,7 @@ export interface Banner {
   bnn_position: number
 }
 
-interface ResponseProduct {
+interface ResponseBanner {
   message: string,
   data: Banner[]
 }
@@ -21,7 +21,7 @@ export const bannersApi = createApi({
     baseUrl: process.env.NEXT_PUBLIC_BACKEND_URL, // ✅ lee la variable de entorno
   }),
   endpoints: (builder) => ({
-    getBanners: builder.query<ResponseProduct, void>({
+    getBanners: builder.query<ResponseBanner, void>({
       query: () => "banner",
     }),
   }),
