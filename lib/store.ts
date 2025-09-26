@@ -1,14 +1,17 @@
 import { configureStore } from "@reduxjs/toolkit"
 import { bannersApi } from "./features/banners/bannersApi"
+import { productsApi } from "./features/products/productsApi";
 
 export const makeStore = () => {
     return configureStore({
         reducer: {
             [bannersApi.reducerPath]: bannersApi.reducer,
+            [productsApi.reducerPath]: productsApi.reducer,
         },
         middleware: (getDefaultMiddleware) => 
             getDefaultMiddleware().concat(
-                bannersApi.middleware
+                bannersApi.middleware,
+                productsApi.middleware,
             )
     })
 }
