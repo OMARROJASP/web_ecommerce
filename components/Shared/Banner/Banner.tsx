@@ -2,12 +2,13 @@
 import { useGetBannersQuery } from '@/lib/features/banners/bannersApi'
 import React from 'react'
 import { Carrucel } from './Carrucel';
+import { SkeletonCarrucel } from './Carrucel/CarrucelSkeleton';
 
 export function Banner() {
   const { data: response, isLoading, isError} = useGetBannersQuery();
 
   if (isLoading) {
-    return <p>Cargando banners...</p>
+    return <p><SkeletonCarrucel /></p>
   }
 
   if (isError) {

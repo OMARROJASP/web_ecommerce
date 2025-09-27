@@ -10,11 +10,19 @@ import {
 import Autoplay from 'embla-carousel-autoplay'
 import { useGetProductsQuery, type Product } from '@/lib/features/products/productsApi'
 import { CardProduct } from './CardProduct'
+import { CardProductSkeleton } from './CardProduct/CardProductSkeleton'
 
 
 export function Carrucel() {
 
     const { data: response, isLoading, isError} = useGetProductsQuery();
+    
+    if (isLoading) {
+        return <CardProductSkeleton />
+    }
+    if (isError) {
+    return <p>Error al cargar los productos.</p>
+    }
     return (
     <Carousel 
     opts={{ loop: true }}
@@ -33,8 +41,8 @@ export function Carrucel() {
   ))}
 </CarouselContent>
 
-        <CarouselPrevious className='ml-[40px] p-[20px]' />
-        <CarouselNext className='mr-[40px] p-[20px]'/>
+        <CarouselPrevious className='ml-[60px] p-[20px]' />
+        <CarouselNext className='mr-[60px] p-[20px]'/>
     </Carousel>
     );
 }
