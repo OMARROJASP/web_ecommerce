@@ -5,9 +5,9 @@ import { Banner } from "@/components/Shared";
 export default function Home() {
   return (
     <div>
-      <div>
-        <Banner />
-        <Carrucel />
+      <Banner />
+      <div >        
+        <Carrucel  />
       </div>
 
     </div>
