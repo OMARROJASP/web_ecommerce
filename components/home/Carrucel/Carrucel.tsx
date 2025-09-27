@@ -23,14 +23,18 @@ export function Carrucel() {
     ]}
     >
         <CarouselContent>
-            {response?.data.map((prod:Product) => (
-                <CarouselItem key={prod.prod_id}>
-                    <CardProduct product={prod} />
-                </CarouselItem>
-            ))}
-        </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
+  {response?.data.map((prod: Product) => (
+    <CarouselItem
+      key={prod.prod_id}
+      className="basis-1/3 md:basis-1/4 lg:basis-1/5"
+    >
+      <CardProduct product={prod} />
+    </CarouselItem>
+  ))}
+</CarouselContent>
+
+        <CarouselPrevious className='ml-[40px] p-[20px]' />
+        <CarouselNext className='mr-[40px] p-[20px]'/>
     </Carousel>
     );
 }
