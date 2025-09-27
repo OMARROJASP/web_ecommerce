@@ -48,8 +48,8 @@ export function Carrucel({ banners }: CarrucelProps) {
                 </CarouselItem>
             ))}
         </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
+        <CarouselPrevious className='ml-[60px] p-[20px]' />
+        <CarouselNext className='mr-[60px] p-[20px]'/>
     </Carousel>
   );
 }
