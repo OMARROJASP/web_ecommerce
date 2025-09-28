@@ -25,8 +25,8 @@ interface CardProductProps  {
     //const [name, setName] = useState("");
 
     const countProductName = (aux:string) => {
-        if (aux.length > 25 ) {
-            return `${aux.slice(0,22)}...`
+        if (aux.length > 20 ) {
+            return `${aux.slice(0,20)}...`
         }
         return aux
     }

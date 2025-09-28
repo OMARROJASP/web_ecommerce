@@ -1,9 +1,16 @@
-import React from 'react'
+"use client"
+
+import React, { useState } from 'react'
 import { links } from '../Navbar.data'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
+import { Tally1, User } from 'lucide-react'
+import { PopUp } from '../../PopUp'
+import { LoginForm } from '../../Login'
 
 export function NavbarDesktop() {
+
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <div className='hidden md:flex items-center gap-4 text-lg'>
       {
@@ -16,6 +23,23 @@ export function NavbarDesktop() {
           
         ))
       }
+      <Tally1 />
+      <div className='flex items-center gap-1'>
+        <User className='h-[30px] w-[30px] bg-gray-100 p-1 rounded-full'/>
+        <Button variant={'ghost'} className='bg-none'>
+          <p className='text-white text-sm' onClick={() => setIsOpen(true)} >Iniciar sesion</p>
+        </Button>   
+
+      </div>
+      
+      <PopUp
+        open={isOpen} 
+        onOpenChange={setIsOpen}
+        title='Inicio Sesión'
+        >
+        <LoginForm />
+      </PopUp>
+      
     </div>
   )
 }

@@ -8,7 +8,7 @@ export function Banner() {
   const { data: response, isLoading, isError} = useGetBannersQuery();
 
   if (isLoading) {
-    return <p><SkeletonCarrucel /></p>
+    return <SkeletonCarrucel />
   }
 
   if (isError) {

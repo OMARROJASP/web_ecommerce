@@ -1,4 +1,4 @@
-import { Carrucel } from "@/components/home";
+import { Carrucel, User } from "@/components/home";
 import { Banner } from "@/components/Shared";
 //import { Navbar } from "./components";
 
@@ -6,7 +6,10 @@ export default function Home() {
   return (
     <div>
       <Banner />
-      <div >        
+      <div className="px-[5px]  md:px-[2rem]">     
+        <div>
+          <User />
+        </div>
         <Carrucel  />
       </div>
 
