@@ -21,8 +21,9 @@ export function Carrucel({ banners }: CarrucelProps) {
     <Carousel 
     opts={{ loop: true }}
     plugins={[
-    Autoplay({ delay: 3000 }) // cada 3 segundos
+    Autoplay({ delay: 3000 })
   ]}
+  className='relative z-10'
     >
         <CarouselContent>
             {banners?.map((bnn) => (

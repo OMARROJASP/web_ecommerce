@@ -26,7 +26,7 @@ export function NavbarDesktop() {
       <Tally1 />
       <div className='flex items-center gap-1'>
         <User className='h-[30px] w-[30px] bg-gray-100 p-1 rounded-full'/>
-        <Button variant={'ghost'} className='bg-none'>
+        <Button variant={'ghost'} className='hover:bg-transparent cursor-pointer'>
           <p className='text-white text-sm' onClick={() => setIsOpen(true)} >Iniciar sesion</p>
         </Button>   
 
@@ -35,7 +35,6 @@ export function NavbarDesktop() {
       <PopUp
         open={isOpen} 
         onOpenChange={setIsOpen}
-        title='Inicio Sesión'
         >
         <LoginForm />
       </PopUp>
