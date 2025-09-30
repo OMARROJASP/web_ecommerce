@@ -5,9 +5,7 @@ import { type Product } from '@/lib/features/products/productsApi'
 
 import {
   Card,
-  CardAction,
   CardContent,
-  CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
@@ -35,10 +33,9 @@ interface CardProductProps  {
       <Card>
     <CardHeader>
       <CardTitle className='h-[54px] md:h-auto'>{countProductName(product.prod_name)}</CardTitle>
-      {/* <CardDescription>{product.prod_description}</CardDescription> */}
     </CardHeader>
     <CardContent>
-  <div className="w-full h-[150px] flex items-center justify-center overflow-hidden rounded-md bg-gray-100 sm:text-xs">
+  <div className=" flex items-center justify-center overflow-hidden rounded-md bg-gray-100 sm:text-xs">
     <Image 
       src={product.prod_imageUrl}
       alt={product.prod_name}

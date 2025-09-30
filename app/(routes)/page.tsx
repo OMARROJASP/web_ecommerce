@@ -5,9 +5,6 @@ import { Banner } from "@/components/Shared";
 export default function Home() {
   return (
     <div>
-      <div className="h-[80px] w-full">
-        AS
-      </div>
       <Banner />
       <div className="px-[5px]  md:px-[2rem]">     
         <div>
